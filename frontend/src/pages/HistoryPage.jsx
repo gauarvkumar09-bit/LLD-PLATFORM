@@ -9,7 +9,7 @@ export const HistoryPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/submissions/history', { withCredentials: true })
+      .get(`${import.meta.env.VITE_API_URL}/submissions/history`, { withCredentials: true })
       .then((res) => setHistory(res.data))
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
